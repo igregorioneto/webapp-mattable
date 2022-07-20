@@ -1,5 +1,5 @@
 import { EventEmitter, Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { MatTableDataSource } from '@angular/material/table';
 import { Schedule } from './Schedule';
 
 const ELEMENT_DATA: Schedule[] = [
@@ -17,14 +17,16 @@ export class ScheduleService {
   static valuesSchedule: EventEmitter<boolean> = new EventEmitter<boolean>();
   static valuesEditSchedule: EventEmitter<Schedule> = new EventEmitter<Schedule>();
 
-  dataSource = [...ELEMENT_DATA];
+  dataSource!: MatTableDataSource<Schedule>;
 
-  constructor() { }
+  constructor() { 
+    this.dataSource = new MatTableDataSource([...ELEMENT_DATA]);
+  }
 
   add(schedule: Schedule) {
     const { name, phone } = schedule;
-    const id = Number(this.dataSource[this.dataSource.length - 1].id) + 1;
-    this.dataSource.push({
+    const id = Number(this.dataSource.data[this.dataSource.data.length - 1].id) + 1;
+    this.dataSource.data.push({
       id,
       name,
       phone
@@ -34,7 +36,7 @@ export class ScheduleService {
   edit(schedule: Schedule) {
     const { id, name, phone } = schedule;
     this.remove(schedule);
-    this.dataSource.push({
+    this.dataSource.data.push({
       id,
       name,
       phone
@@ -42,15 +44,23 @@ export class ScheduleService {
   }
 
   get() {
-    return this.dataSource;
+    return this.dataSource.data;
+  }
+
+  filter(filter: string) {
+    this.dataSource.filter = filter.trim().toLowerCase();
+    
+    if (this.dataSource.paginator) {
+      this.dataSource.paginator.firstPage();
+    }
   }
 
   remove(schedule: Schedule) {
-    const index = this.dataSource.findIndex(value => value === schedule);
-    this.dataSource.splice(index, 1);
+    const index = this.dataSource.data.findIndex(value => value === schedule);
+    this.dataSource.data.splice(index, 1);
   }
 
   removeFromBottomToTop() {
-    this.dataSource.pop();
+    this.dataSource.data.pop();
   }
 }
