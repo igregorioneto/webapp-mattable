@@ -1,1 +1,50 @@
-<p>form works!</p>
+<form class="example-form" [formGroup]="formGroup">
+    <mat-form-field appearance="fill">
+        <mat-label>Nome</mat-label>
+        <input type="text" matInput formControlName="name" placeholder="Digite um nome..." />
+        <mat-error *ngIf="formGroup.get('name')?.hasError('required')">
+            Por favor, digite um nome.
+        </mat-error>
+        <!-- <mat-error *ngIf="formGroup.get('name')?.hasError('required')">
+            Nome é <strong>requirido</strong>
+        </mat-error> -->
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+        <mat-label>Telefone</mat-label>
+        <input type="text" matInput formControlName="phone" placeholder="Digite um telefone..." />
+        <mat-error *ngIf="formGroup.get('phone')?.hasError('required')" >
+            Por favor, digite um telefone.
+        </mat-error>
+        <!-- <mat-error *ngIf="formGroup.get('phone')?.hasError('required')">
+            Telefone é <strong>requirido</strong>
+        </mat-error> -->
+    </mat-form-field>
+
+    <div class="buttons">
+        <button 
+            mat-raised-button 
+            color="primary" 
+            [disabled]="!(formGroup.get('name')?.value) || !(formGroup.get('phone')?.value)"
+            (click)="savingData()"
+        >
+            Salvar
+        </button>
+    
+        <button 
+            mat-raised-button 
+            color="basic" 
+            (click)="clearData()"
+        >
+            Limpar
+        </button>
+
+        <button
+            mat-raised-button 
+            color="warn" 
+            (click)="removeFromBottomToTop()"
+        >
+            Deletar
+        </button>
+    </div>
+</form>
