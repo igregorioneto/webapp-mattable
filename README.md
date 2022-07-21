@@ -1,27 +1,50 @@
-# WebappMattable
+<h1 align="center">WebappMattable</h1>
+<h1>
+    <a href="https://angular.io/">🔗
+     Angular
+     </a>
+</h1>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.6.
 
-## Development server
+<img src="https://img.shields.io/static/v1?label=WebappMattable&message=Greg%C3%B3rioNeto&color=7159c1&style=for-the-badge&logo=ghost">
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+![WebappMattable](https://github.com/igregorioneto/cad-unidades-consumidoras/blob/Unidades/src/assets/icons/simplescreenrecorder-2021-08-13_21.21.16.gif?raw=true)
 
-## Code scaffolding
+<p align="center">
+ <a href="#objetivo">Objetivo</a> •
+ <a href="#tecnologias">Tecnologias</a> •
+ <a href="#tecnologias">Como rodar o projeto</a> 
+</p>
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+<h2 align="center">
+Objetivo:
+</h2>
 
-## Build
+<p>
+🚀 Construindo CRUD de uma agenda completa utilizando o Angular e o Material UI. Utilizando os componentes do Material UI como Buscar, Paginação e Ordenação.
+</p>
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+<h2 align="center">
+Tecnologias:
+</h2>
 
-## Running unit tests
+<p align="center">
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+[Angular CLI](https://github.com/angular/angular-cli) version 12.1.2.
 
-## Running end-to-end tests
+[SCSS](https://sass-lang.com/)
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+[MATERIAL UI](https://material.angular.io/)
 
-## Further help
+</p>
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+<h2 align="center">
+Como rodar o projeto:
+</h2>
+
+```
+ng s ou ng server ou ng server --open
+```
+
+<h3>Acessar projeto: </h3> <a href="http://localhost:4200/">Clique aqui!!!</a>
