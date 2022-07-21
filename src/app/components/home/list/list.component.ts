@@ -44,7 +44,7 @@ export class ListComponent implements OnInit, AfterViewInit {
 
   applyFilter(event: Event) {
     const value = (event.target as HTMLTextAreaElement).value;
-    this.scheduleService.filter(value);
+    this.dataSource.filter = value.trim().toLowerCase();
   }
 
 }
